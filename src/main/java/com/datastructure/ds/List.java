@@ -11,5 +11,5 @@ public interface List<E>{
     //判断线性表中是否包含元素o
     public boolean contains(E o);
 
-
+     public int indexOf(E e);
 }
