@@ -15,7 +15,7 @@ public interface List<E>{
      public int indexOf(E e);
 
     //获取线性表中 位置为index的元素
-     public E get();
+     public E get(int index);
 
     //将线性表中 位置为index的元素设置为e
      public void set(int index,E e);
