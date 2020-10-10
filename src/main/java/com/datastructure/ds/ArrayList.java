@@ -3,6 +3,9 @@ package com.datastructure.ds;
 import java.util.Arrays;
 
 public class ArrayList<E> implements List<E> {
+    public static void main(String []args){
+        
+    }
 
     private static final int DEFAULT_CAPACITY = 10;
 
