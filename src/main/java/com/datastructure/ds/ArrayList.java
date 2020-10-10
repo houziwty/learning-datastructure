@@ -4,7 +4,21 @@ import java.util.Arrays;
 
 public class ArrayList<E> implements List<E> {
     public static void main(String []args){
-        
+        List<Integer>list=new ArrayList<>();
+        for(int i=0;i<100;i++){
+            list.add(i,i);
+        }
+        for(int i=0; i<100; i++) {
+            System.out.println("The " + i + "th element is: " + list.get(i));
+        }
+
+        for(int i=0; i<50; i+=8) {
+            list.remove(i);
+        }
+
+        for(int i=0; i<list.getSize(); i++) {
+            System.out.println("After removing, the " + i + "th element is: " + list.get(i));
+        }
     }
 
     private static final int DEFAULT_CAPACITY = 10;

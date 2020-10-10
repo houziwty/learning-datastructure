@@ -2,6 +2,21 @@ package com.datastructure.ds;
 
 public class LinkedList<E> implements List<E> {
 
+    public static void main(String[]args){
+      List<Integer>list=new LinkedList<>();
+      for(int i=0;i<10;i++){
+          list.add(i,i);
+      }
+      for(int i=0;i<10;i++){
+          System.out.println("The " + i + "th element is: " + list.get(i));
+      }
+        list.remove(0);
+
+        for(int i=0; i<list.getSize(); i++) {
+            System.out.println("After removing, the " + i + "th element is: " + list.get(i));
+        }
+    }
+
     private class Node {
         private E data;//数据域
         private Node next; //指针域，指向下一个Node
