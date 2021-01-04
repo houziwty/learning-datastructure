@@ -1,4 +1,4 @@
-package com.datastructure.ds;
+package com.datastructure.ds.list;
 
 public interface List<E>{
 

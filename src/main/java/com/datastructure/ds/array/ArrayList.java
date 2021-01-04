@@ -1,4 +1,6 @@
-package com.datastructure.ds;
+package com.datastructure.ds.array;
+
+import com.datastructure.ds.list.List;
 
 import java.util.Arrays;
 

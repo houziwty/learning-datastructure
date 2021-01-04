@@ -1,4 +1,4 @@
-package com.datastructure.ds;
+package com.datastructure.ds.list;
 
 public class LinkedList<E> implements List<E> {
 
