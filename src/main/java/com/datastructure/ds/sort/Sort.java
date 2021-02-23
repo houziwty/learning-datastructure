@@ -8,6 +8,21 @@ package com.datastructure.ds.sort;
 public class Sort {
 
     public static void main(String []args){
+       int []arr=new int[]{99,2,1,3,5,73,90,32,12,41,65};
+        for(int i=0;i<arr.length;i++){
+            System.out.print("arr:"+arr[i]);
+            System.out.print(",");
+        }
+        System.out.println();
+        System.out.println("===========");
+
+//       bubbleSort(arr);
+//        selctionSort(arr,arr.length);
+        sheelSort(arr,arr.length);
+       for(int i=0;i<arr.length;i++){
+           System.out.print("arr:"+arr[i]);
+           System.out.print(",");
+       }
 
     }
 
@@ -76,7 +91,68 @@ public class Sort {
      * @author tianyu.wang
      * @date 2021/2/22 2:54 下午
      */
-    public static void insertionSort(int  []arr){
+    public static void insertionSort(int []arr){
+        int insertVal=0;
+        int insertIndex=0;
+        for(int i=1;i<arr.length;i++){
+            //定义待插入的数
+            insertVal=arr[i];
+            insertIndex=i-1;// 即arr[1]的前面这个数的下标
+
+            // 给insertVal 找到插入的位置
+            // 说明
+            // 1. insertIndex >= 0 保证在给insertVal 找插入位置，不越界
+            // 2. insertVal < arr[insertIndex] 待插入的数，还没有找到插入位置
+            // 3. 就需要将 arr[insertIndex] 后移
+            while(insertIndex>=0&&insertVal<arr[insertIndex]){
+                System.out.println("给insertVal 找到插入的位置:arr[insertIndex+1]"+arr[insertIndex+1]+" arr[insertIndex]="+arr[insertIndex]);
+                arr[insertIndex+1]=arr[insertIndex];
+
+                insertIndex--;
+            }
+            // 当退出while循环时，说明插入的位置找到, insertIndex + 1
+            //这里我们判断是否需要赋值
+            if(insertIndex+1!=i){
+                System.out.println("给insertVal 找到插入的位置:arr[insertIndex+1]"+arr[insertIndex+1]+" insertVal="+insertVal);
+                arr[insertIndex+1]=insertVal;
+            }
+        }
+    }
+
+
+        /***
+         * @params []
+         * @return void
+         * @description：4希尔排序
+         * 在要排序的一组数中，根据某一增量分为若干子序列，并对子序列分别进行插入排序。然后逐渐将增量减小,并重复上述过程。
+         * 直至增量为1,此时数据序列基本有序,最后进行插入排序。
+         * 时间复杂度:    O(n^（1.3—2）)
+         * @author tianyu.wang
+         * @date 2021/2/23 10:35 上午
+         */
+    public static void sheelSort(int array[],int length ){
+        int temp=0;
+        int incre=length;
+        while(true){
+            incre=incre/2;
+            for(int k=0;k<incre;k++){  //根据增量分为若干个子序列
+                for(int i=k+incre;i<length;i+=incre){
+                    for(int j=i;j>k;j-=incre){
+                        if(array[j]<array[j-incre]){
+                            System.out.println("比较:array[j-incre]"+array[j-incre]+" array[j]="+array[j]);
+                            temp=array[j-incre];
+                            array[j-incre]=array[j];
+                            array[j]=temp;
+                        }else {
+                            break;
+                        }
+                    }
+                }
+            }
+            if(incre==1){
+                break;
+            }
+        }
 
     }
 
