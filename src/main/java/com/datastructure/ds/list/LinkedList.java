@@ -1,5 +1,19 @@
 package com.datastructure.ds.list;
 
+
+/***
+ * @author tianyu.wang
+ * @description :链表通过指针将一组零散的内存块串联在一起。
+ * 其中，我们把内存块称为链表的“结点”。
+ * 为了将所有的结点串起来，每个链表的结点除了存储数据之外，
+ * 还需要记录链上的下一个结点的地址。
+ * 特点
+ * (1)不需要连续的内存空间。
+ * (2)有指针引用
+ * (3)三种最常见的链表结构：单链表、双向链表和循环链表
+ *
+ * @date
+ */
 public class LinkedList<E> implements List<E> {
 
     public static void main(String[]args){
