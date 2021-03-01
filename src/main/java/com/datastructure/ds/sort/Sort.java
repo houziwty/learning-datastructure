@@ -1,5 +1,7 @@
 package com.datastructure.ds.sort;
 
+import com.google.inject.internal.cglib.proxy.$Enhancer;
+
 /**
  * @author : tianyu.wang
  * create at:  2021/2/16  4:28 下午
@@ -18,7 +20,12 @@ public class Sort {
 
 //       bubbleSort(arr);
 //        selctionSort(arr,arr.length);
-        sheelSort(arr, arr.length);
+//        sheelSort(arr, arr.length);
+
+
+        mergeSort(arr, 0, arr.length - 1);
+
+
         for (int i = 0; i < arr.length; i++) {
             System.out.print("arr:" + arr[i]);
             System.out.print(",");
@@ -190,10 +197,67 @@ public class Sort {
                 j--;
             }
         }
-        array[i]=key;
-        quickSort(array,left,i-1);
-        quickSort(array,i+1,right);
+        array[i] = key;
+        quickSort(array, left, i - 1);
+        quickSort(array, i + 1, right);
 
+    }
+
+    /***
+     * @params []
+     * @return void
+     * @description:归并排序
+     * 归并排序是建立在归并操作上的一种有效的排序算法。
+     * 该算法是采用分治法的一个非常典型的应用。
+     * 首先考虑下如何将2个有序数列合并。这个非常简单，
+     * 只要从比较2个数列的第一个数，谁小就先取谁，
+     * 取了后就在对应数列中删除这个数。然后再进行比较，
+     * 如果有数列为空，那直接将另一个数列的数据依次取出即可。
+     * O(NlogN)
+     * @author tianyu.wang
+     * @date 2021/3/1 11:12 上午
+     */
+    public static void mergeSort(int a[], int start, int end) {
+        if (start < end) {
+//            int middle=start+(end-start)/2;
+            int middle = (start + end) / 2;
+            mergeSort(a, start, middle); //左半部分排序
+            mergeSort(a, middle + 1, end);
+            merge(a, start, middle, end);
+        }
+    }
+
+    //将有序数组a[] b[] 合并到c 中
+    static void merge(int a[], int start, int middle, int end) {
+        int n1 = middle - start + 1;
+        int n2 = end - middle;
+        int left[] = new int[n1 + 1];
+        int right[] = new int[n2 + 1];
+        //复制两部分到新数组
+        for (int i = 0; i < n1; i++) {
+            left[i] = a[start + i];
+        }
+        for (int j = 0; j < n2; j++) {
+            right[j] = a[middle + j + 1];
+        }
+
+        left[n1] = Integer.MAX_VALUE;
+
+        right[n2] = Integer.MAX_VALUE;
+
+        int i = 0, j = 0;
+
+        //循环判断数组的值并插入原来数组
+        // 由于具有令牌 不需要考虑数组达到 末尾的情况
+        for (int k = start; k <= end; k++) {
+            if (left[i] <= right[j]) {
+                a[k] = left[i];
+                i++;
+            } else {
+                a[k] = right[j];
+                j++;
+            }
+        }
     }
 
 
