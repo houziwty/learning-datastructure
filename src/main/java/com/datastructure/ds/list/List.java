@@ -25,4 +25,6 @@ public interface List<E>{
 
     //删除并返回线性表中位置为index的元素
     public E remove(int index);
+
+
 }
