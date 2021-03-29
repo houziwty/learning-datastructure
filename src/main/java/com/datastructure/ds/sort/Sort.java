@@ -303,4 +303,13 @@ public class Sort {
     }
 
 
+
+    static void countSort(int data[],int min ,int max)throws Exception{
+        int counts[]=new int [max+1];
+        for(int i=0;i<data.length;i++){
+
+        }
+    }
+
+
 }
