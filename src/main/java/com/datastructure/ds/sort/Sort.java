@@ -2,6 +2,8 @@ package com.datastructure.ds.sort;
 
 import com.google.inject.internal.cglib.proxy.$Enhancer;
 
+import java.io.*;
+
 /**
  * @author : tianyu.wang
  * create at:  2021/2/16  4:28 下午
@@ -9,27 +11,32 @@ import com.google.inject.internal.cglib.proxy.$Enhancer;
  */
 public class Sort {
 
-    public static void main(String[] args) {
-        int[] arr = new int[]{99, 2, 1, 3, 5, 73, 90, 32, 12, 41, 65};
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print("arr:" + arr[i]);
-            System.out.print(",");
-        }
-        System.out.println();
-        System.out.println("===========");
+    public static void main(String[] args) throws Exception {
+
+
+        countMethon();
+
+
+//        int[] arr = new int[]{99, 2, 1, 3, 5, 73, 90, 32, 12, 41, 65};
+//        for (int i = 0; i < arr.length; i++) {
+//            System.out.print("arr:" + arr[i]);
+//            System.out.print(",");
+//        }
+//        System.out.println();
+//        System.out.println("===========");
 
 //       bubbleSort(arr);
 //        selctionSort(arr,arr.length);
 //        sheelSort(arr, arr.length);
 //        mergeSort(arr, 0, arr.length - 1);
 
-        shellSort(arr,arr.length);
-
-
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print("arr:" + arr[i]);
-            System.out.print(",");
-        }
+//        shellSort(arr,arr.length);
+//
+//
+//        for (int i = 0; i < arr.length; i++) {
+//            System.out.print("arr:" + arr[i]);
+//            System.out.print(",");
+//        }
 
     }
 
@@ -302,13 +309,42 @@ public class Sort {
         }
     }
 
+    static void countMethon() throws Exception {
+        String str = null;
 
+        InputStreamReader isr = new InputStreamReader(new FileInputStream(fileName), "UTF-8");
+        BufferedReader br = new BufferedReader(isr);
+        int data[] = new int[2100002];
+        int i = 0;
+        while ((str = br.readLine()) != null) {
+            double a = Double.valueOf(str);
+            a = a * 100;
+            data[i++] = (int) a;
+            // System.out.println((int) a);
+        }
+        System.out.println("读取数据size为" + i);
+        long start = System.currentTimeMillis();
+        countSort(data, 0, data.length - 1);
+        System.out.println("快排消耗时间:" + (System.currentTimeMillis() - start) + "ms");
+    }
+
+    static  String fileName="/Users/tianyu.wang/Downloads/图书/算法/【数据结构与算法-赵云】/09/贪心算法&动态规划/200w.txt";
 
     static void countSort(int data[],int min ,int max)throws Exception{
         int counts[]=new int [max+1];
         for(int i=0;i<data.length;i++){
-
+            counts[data[i]]++;
         }
+        File file=new File(fileName);
+        Writer out=new FileWriter(file);
+        for(int i=0;i<=max;i++){
+            if(counts[i]>0){
+                for(int j=0;j<counts[i];j++){
+                    out.write((double)(i/100.0)+"\r\n");
+                }
+            }
+        }
+        out.close();
     }
 
 
