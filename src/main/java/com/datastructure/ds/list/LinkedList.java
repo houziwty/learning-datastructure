@@ -34,7 +34,6 @@ public class LinkedList<E> implements List<E> {
     private class Node {
         private E data;//数据域
         private Node next; //指针域，指向下一个Node
-
         public Node(E data, Node next) {
             this.data = data;
             this.next = next;
@@ -50,6 +49,7 @@ public class LinkedList<E> implements List<E> {
     }
 
     private Node head;
+
     private int size;
 
     public LinkedList() {
