@@ -9,7 +9,10 @@ import java.util.Arrays;
  */
 public class RedBlackTree {
 
-    
+    public static void main(String[] args) {
+        RedBlackTree bst = new RedBlackTree();
+        bst.creatTree();
+    }
 
 
 
@@ -57,7 +60,7 @@ public class RedBlackTree {
             node.color=B;
             while (true){
                 if(node.key<temp.key){
-                    if(temp.left==null){
+                    if(temp.left==nil){
                         temp.left=node;
                         node.p=temp;
                         break;
