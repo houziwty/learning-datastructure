@@ -13,6 +13,19 @@ public class HeapSort {
         heapSort(data);
         System.out.println(Arrays.toString(data));
     }
+    private static void heapSort(int[] data) {
+        int len=data.length;
+        for(int i=len/2-1;i>=0;i--){//o(nlgn)
+            maxHeap(data,i,len);//构建堆
+        }
+
+        for(int i=len-1;i>0;i--){
+            int temp=data[0];
+            data[0]=data[i];
+            data[i]=temp;
+            maxHeap(data,0,i);//len~i已经排好序了
+        }
+    }
 
     public static void maxHeap(int data[], int start, int end) {// 建一个大顶堆,end表示最多建到的点 lgn
         int parent = start;
@@ -36,17 +49,6 @@ public class HeapSort {
         return;
     }
 
-    private static void heapSort(int[] data) {
-        int len=data.length;
-        for(int i=len/2-1;i>=0;i--){//o(nlgn)
-            maxHeap(data,i,len);
-        }
-        for(int i=len-1;i>0;i--){
-            int temp=data[0];
-            data[0]=data[i];
-            data[i]=temp;
-            maxHeap(data,0,i);//len~i已经排好序了
-        }
-    }
+
 
 }
