@@ -20,6 +20,7 @@ public class LinkedQueue<E> implements Queue<E> {
     }
 
     private Node<E> head;//队头指针
+
     private Node<E> tail;//队尾指针
 
     private int size;//队列元素数量
@@ -33,6 +34,8 @@ public class LinkedQueue<E> implements Queue<E> {
     public boolean empty() {
         return size == 0;
     }
+
+
 
     @Override
     public void enqueue(E e) {
@@ -55,7 +58,7 @@ public class LinkedQueue<E> implements Queue<E> {
         if (size == 0) {
             throw new RuntimeException("队列为空...");
         }
-        //结果赋值为头部
+        //出队为头部 因为先进先出
         E result = head.data;
         //头部赋值下一个指针
         head = head.next;
