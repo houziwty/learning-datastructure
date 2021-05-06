@@ -33,7 +33,9 @@ public class LinkedQueue<E> implements Queue<E> {
     @Override
     public void enqueue(E e) {
         Node<E>prev=tail;
+        //赋值进入队尾
         tail=new Node<>(e,null);
+
         if(size==0)
             head=tail;
         else
@@ -44,6 +46,7 @@ public class LinkedQueue<E> implements Queue<E> {
 
     @Override
     public E dequeue() {
+        //出队列
         if(size==0){
             throw new RuntimeException("队列为空...");
         }
