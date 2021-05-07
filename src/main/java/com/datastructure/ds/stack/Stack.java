@@ -1,5 +1,7 @@
 package com.datastructure.ds.stack;
 
+import java.util.HashSet;
+
 /**
  * @author : tianyu.wang
  * create at:  2021/1/26  2:32 下午
@@ -22,6 +24,7 @@ package com.datastructure.ds.stack;
  * 有些技术理解不到位的人员就可能出错。所以在某些特定场景下最好是选择栈这个数据结构。
  */
 public interface Stack<Item> {
+
 
     //入栈
     Stack<Item> push(Item item);

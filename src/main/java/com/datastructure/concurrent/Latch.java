@@ -11,8 +11,9 @@ import java.util.concurrent.Semaphore;
  */
 public class Latch {
     public static void main(String[] args) {
-        testCountDownLatch();
-        testCyclicBarrier();
+//        testCountDownLatch();
+//        testCyclicBarrier();
+        testSemapore();
     }
 
     static void testSemapore(){
