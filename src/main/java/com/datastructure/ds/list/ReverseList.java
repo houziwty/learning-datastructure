@@ -63,6 +63,7 @@ public class ReverseList {
         if (head == null || head.next == null) {
             return head;
         }
+        //等于新头部
         ListNode newHead = recursion(head.next);
         head.next.next = head;
         head.next = null;
@@ -86,9 +87,6 @@ public class ReverseList {
             System.out.println(nodeShow.val);
             nodeShow=nodeShow.next;
         }
-
-
     }
-
 
 }

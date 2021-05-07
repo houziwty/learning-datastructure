@@ -1,5 +1,7 @@
 package com.datastructure.ds.array;
 
+import java.util.Arrays;
+
 /**
  * @author : tianyu.wang
  * create at:  2021/5/6  9:51 上午
@@ -14,16 +16,14 @@ package com.datastructure.ds.array;
  */
 public class RemoveDuplicates {
     public static void main(String[] args) {
-        int[] nums = {1, 2,2, 3, 4, 5, 5, 6};
+        int[] nums = {1,1, 2,2, 3, 4, 5, 5, 6};
         System.out.println(removeDuplicates(nums));
     }
 
     static int removeDuplicates(int[] nums) {
         if (nums.length == 0) return 0;
         int i = 0;//i 是慢指针，
-
         // j 是快指针
-
         for (int j = 1; j < nums.length; j++) {
             //只要 nums[i]=nums[j]，我们就增加 j 以跳过重复项。
             //当遇到 nums[j] != nums[i]时，
@@ -35,6 +35,7 @@ public class RemoveDuplicates {
             }
             //递增 i，接着将再次重复相同的过程，直到 j 到达数组的末尾为止。
         }
+        System.out.println(Arrays.toString(nums));
         return i + 1;
     }
 

@@ -17,11 +17,13 @@ public class CircleArrayQueue {
         n=cap;
     }
 
-    public void push(int m){//入队列  O(1)		//排序
+    public void push(int value){//入队列  O(1)		//排序
+//        if(isFull()) 或
         if((tail+1)%n==head){ //如果入队尾部等于头部证明 到环形头部
             return;
         }
-        data[tail]=m;// 1 2 3 4 5 	排序,树形结构
+
+        data[tail]=value;// 1 2 3 4 5 	排序,树形结构
         tail = (tail + 1) % n;		//循环队列 tail=7 8越界了，(7+1)%8==0
     }
 
@@ -35,5 +37,9 @@ public class CircleArrayQueue {
     public boolean isEmpty(){
         if(head==tail)return true;
         return false;
+    }
+
+    boolean isFull(){
+        return (tail + 1) % data.length == head;
     }
 }
