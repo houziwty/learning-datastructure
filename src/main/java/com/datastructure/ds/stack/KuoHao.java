@@ -10,7 +10,7 @@ public class KuoHao {
         Stack<Integer> stack = new ArrayStack<>();
 
         for(int i=0; i<20; i++) {
-            stack.push(i+1);
+            stack.push(i);
         }
 
         System.out.println(stack.pop());
