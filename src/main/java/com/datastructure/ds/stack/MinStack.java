@@ -18,5 +18,8 @@ public class MinStack {
             this.next = next;
         }
     }
-    
+    //链表头，相当于栈顶
+    private ListNode head;
+
+
 }

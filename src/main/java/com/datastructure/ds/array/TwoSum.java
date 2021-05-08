@@ -1,6 +1,8 @@
 package com.datastructure.ds.array;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author : tianyu.wang
@@ -15,8 +17,11 @@ public class TwoSum {
 
     public static void main(String[] args) {
 
-        int[] nums = {2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] nums = {2, 3, 5, 6,  8, 9, 10};
         System.out.println(Arrays.toString(twoSum(nums, 10)));
+        System.out.println(Arrays.toString(twoSumHash(nums, 10)));
+
+
     }
 
     //暴力解法
@@ -34,7 +39,14 @@ public class TwoSum {
     }
 
     //哈希表:将数组的值作为key存入map，target - num作为key
-    static int []twoSumHash(){
+    static int []twoSumHash(int []nums,int target){
+        Map<Integer,Integer> map=new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            if(map.containsKey(target-nums[i])){
+                return new int []{map.get(target-nums[i]),i};
+            }
+            map.put(nums[i],i);
+        }
         return new int[0];
     }
 
