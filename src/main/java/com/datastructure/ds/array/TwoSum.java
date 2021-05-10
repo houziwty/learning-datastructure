@@ -76,6 +76,7 @@ public class TwoSum {
 
     //解法二:双指针
     //左指针指向数组head，右指针指向数组tail，head+tail > target 则tail 左移，否则head右移
+    //时间复杂度:O(N) 空间复杂度:O(1)
     static int[] twoPoint(int[] nums, int target) {
         int low = 0, high = nums.length - 1;
         while (low < high) {
