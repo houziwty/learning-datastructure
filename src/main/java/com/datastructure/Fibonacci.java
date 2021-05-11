@@ -11,6 +11,8 @@ public class Fibonacci {
 
         System.out.println(calculate(10));
         System.out.println(calculate2(10));
+        System.out.println(iterate(10));
+
 
     }
 
@@ -48,7 +50,30 @@ public class Fibonacci {
         }
         arr[num] = recurse(arr, num - 1) + recurse(arr, num - 2);
         return arr[num];
+    }
 
+    /**
+     * @params
+     * @return
+     * @description :解法三:双指针迭代
+     * 基于去重递归优化，集合没有必要保存每一个下标值，只需保存前两位即可，向后遍历，得出N的值
+     * @author tianyu.wang
+     * @date 2021/5/11 2:59 下午
+     */
+    static int iterate(int num){
+        if (num == 0) {
+            return 0;
+        }
+        if (num == 1) {
+            return 1;
+        }
+        int low=0,high=1;
+        for(int i=2;i<=num;i++){
+            int sum=low +high;
+            low=high;
+            high=sum;
+        }
+        return high;
     }
 
 }

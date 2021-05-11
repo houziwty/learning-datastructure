@@ -8,9 +8,9 @@ package com.datastructure.ds;
 public class Primes {
     public static void main(String[] args) {
         System.out.println(countPrimes(100));
-        int x = 1;
-         x+=2;
-        System.out.println(x);
+
+        System.out.println(eratosthenes(100));
+
     }
 
     /***
@@ -41,7 +41,7 @@ public class Primes {
     /***
      * @params [n]
      * @return int
-     * @description :
+     * @description :埃氏筛 利用合数的概念(非素数)，素数*n必然是合数，因此可以从2开始遍历，将所有的合数做上标记
      * 利用合数的概念(非素数)，素数*n必然是合数，因此可以从2开始遍历，将所有的合数做上标记
      * 将合数标记为true，j = i * i 从 2 * i 优化而来，
      * 系数2会随着遍历递增(j += i，相当于递增了系数2)，
@@ -61,7 +61,9 @@ public class Primes {
         for (int i = 2; i < n; i++) {
             if (!isPrimes[i]) {
                 ans += 1;
+                //将合数标记为true，j = i * i 从 2 * i 优化而来
                 for (int j = i * i; j < n; j += i) {
+                    System.out.println("ans:"+ans+"  i:"+i+"*i:"+i+"="+(i*i)+" j:"+j +" j+n="+(j+i));
                     isPrimes[j] = true;
                 }
             }
