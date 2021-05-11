@@ -7,6 +7,7 @@ package com.datastructure.ds.sort;
  * 1.将数组分成已排序段和未排序段。初始化时已排序端只有一个元素
  * 2.到未排序段取元素插入到已排序段，并保证插入后仍然有序
  * 3.重复执行上述操作，直到未排序段元素全部加完。
+ * 一个有序的数组，我们往里面添加一个新的数据后，如何继续保持数据有序呢？我们只要遍历数组，找到数据应该插入的位置将其插入即可。
  */
 public class InsertSort {
     public static void main(String[] args) {
