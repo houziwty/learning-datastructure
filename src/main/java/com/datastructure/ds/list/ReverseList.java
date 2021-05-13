@@ -10,6 +10,25 @@ package com.datastructure.ds.list;
  * 输入: 1->2->3->4->5 输出: 5->4->3->2->1
  */
 public class ReverseList {
+
+    public static void main(String[] args) {
+        ListNode node5 = new ListNode(5, null);
+        ListNode node4 = new ListNode(4, node5);
+        ListNode node3 = new ListNode(3, node4);
+        ListNode node2 = new ListNode(2, node3);
+        ListNode node1 = new ListNode(1, node2);
+        ListNode node = iterate(node1);
+        ListNode nodeRecurs = recursion(node1);
+        System.out.println(nodeRecurs);
+
+        ListNode nodeShow=node;
+
+        for(int i=0;i<5;i++){
+            System.out.println(nodeShow.val);
+            nodeShow=nodeShow.next;
+        }
+    }
+
     static class ListNode {
         int val;
         ListNode next;
@@ -71,22 +90,6 @@ public class ReverseList {
     }
 
 
-    public static void main(String[] args) {
-        ListNode node5 = new ListNode(5, null);
-        ListNode node4 = new ListNode(4, node5);
-        ListNode node3 = new ListNode(3, node4);
-        ListNode node2 = new ListNode(2, node3);
-        ListNode node1 = new ListNode(1, node2);
-        ListNode node = iterate(node1);
-        ListNode nodeRecurs = recursion(node1);
-        System.out.println(nodeRecurs);
 
-        ListNode nodeShow=node;
-
-        for(int i=0;i<5;i++){
-            System.out.println(nodeShow.val);
-            nodeShow=nodeShow.next;
-        }
-    }
 
 }
