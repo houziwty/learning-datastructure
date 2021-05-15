@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * @author : tianyu.wang
  * create at:  2021/4/21  5:40 下午
- * @description:
+ * @description:红黑树
  */
 public class RedBlackTree {
 
@@ -13,8 +13,6 @@ public class RedBlackTree {
         RedBlackTree bst = new RedBlackTree();
         bst.creatTree();
     }
-
-
 
     private final int R=0;
     private final int B=1;

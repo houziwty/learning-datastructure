@@ -38,7 +38,7 @@ public class ThreeMultiplication {
         return Math.max(nums[0]*nums[1]*nums[2],nums[n-3]*nums[n-2]*nums[n-1]);
     }
 
-    //线性扫描
+    //线性扫描 O(N)
     static int getMaxMin(int []nums){
         // 最小的和第二小的
         int min1=0,min2=0;

@@ -1,5 +1,8 @@
 package com.datastructure.ds.queue;
 
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * @author : tianyu.wang
  * create at:  2021/3/1  5:18 下午
@@ -7,9 +10,11 @@ package com.datastructure.ds.queue;
  */
 public class LinkedQueue<E> implements Queue<E> {
 
+
     //构建node
     private static class Node<E> {
         private E data;
+
         //下一个链表
         private Node<E> next;
 
