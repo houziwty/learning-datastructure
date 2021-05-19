@@ -3,9 +3,13 @@ package com.datastructure.ds.array;
 import com.datastructure.ds.list.List;
 
 import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ArrayList<E> implements List<E> {
-    public static void main(String []args){
+    public  static void main(String []args){
+
+
+
         List<Integer>list=new ArrayList<>();
         for(int i=0;i<100;i++){
             list.add(i,i);
@@ -21,6 +25,9 @@ public class ArrayList<E> implements List<E> {
         for(int i=0; i<list.getSize(); i++) {
             System.out.println("After removing, the " + i + "th element is: " + list.get(i));
         }
+
+        System.out.println(5&1);
+        System.out.println((3&2)==0);
     }
 
     private static final int DEFAULT_CAPACITY = 10;
