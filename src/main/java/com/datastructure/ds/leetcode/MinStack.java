@@ -1,4 +1,4 @@
-package com.datastructure.ds.stack;
+package com.datastructure.ds.leetcode;
 
 /**
  * @author : tianyu.wang

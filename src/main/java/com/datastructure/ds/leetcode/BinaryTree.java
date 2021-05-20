@@ -1,4 +1,4 @@
-package com.datastructure.ds.tree;
+package com.datastructure.ds.leetcode;
 
 /**
  * @author : tianyu.wang

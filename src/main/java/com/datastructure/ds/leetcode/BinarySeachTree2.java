@@ -1,6 +1,4 @@
-package com.datastructure.ds.tree;
-
-import com.google.inject.internal.cglib.core.$ClassInfo;
+package com.datastructure.ds.leetcode;
 
 import java.util.Scanner;
 
