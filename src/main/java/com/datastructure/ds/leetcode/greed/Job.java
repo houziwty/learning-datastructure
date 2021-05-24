@@ -1,4 +1,4 @@
-package com.datastructure.ds.greed;
+package com.datastructure.ds.leetcode.greed;
 
 import java.util.ArrayList;
 import java.util.Collections;

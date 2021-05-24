@@ -1,4 +1,4 @@
-package com.datastructure.ds.greed;
+package com.datastructure.ds.leetcode.greed;
 
 import java.util.Arrays;
 import java.util.Comparator;

@@ -1,4 +1,4 @@
-package com.datastructure.ds.list;
+package com.datastructure.ds.leetcode;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
