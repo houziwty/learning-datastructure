@@ -8,7 +8,7 @@ package com.datastructure;
 public class Fibonacci {
     public static void main(String[] args) {
         int[] nums={0,1,2,3,4,5,6};
-
+        System.out.println(1<<30);
         System.out.println(calculate(10));
         System.out.println(calculate2(10));
         System.out.println(iterate(10));
