@@ -37,6 +37,7 @@ public class Feishu {
                         ischekout = true;
                         break;
                     }
+                   node= node.next;
 
                 }
                 if (ischekout) {
