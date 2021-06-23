@@ -33,10 +33,10 @@ public class Feishu {
                         ischekout = true;
                         break;
                     }
-                    if (node.next.val != val) {
-                        ischekout = true;
-                        break;
-                    }
+//                    if (node.next.val != val) {
+//                        ischekout = true;
+//                        break;
+//                    }
                    node= node.next;
 
                 }
