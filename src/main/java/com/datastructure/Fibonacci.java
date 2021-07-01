@@ -9,14 +9,24 @@ public class Fibonacci {
     public static void main(String[] args) {
         int[] nums={0,1,2,3,4,5,6};
 
-        System.out.println(System.getProperty("os.name"));
+        System.out.println(Role.FOLLOWER);
 
-        System.out.println(1<<30);
-        System.out.println(calculate(10));
-        System.out.println(calculate2(10));
-        System.out.println(iterate(10));
+        System.out.println(Role.CANDIDATE);
+
+//        System.out.println(System.getProperty("os.name"));
+//
+//        System.out.println(1<<30);
+//        System.out.println(calculate(10));
+//        System.out.println(calculate2(10));
+//        System.out.println(iterate(10));
 
 
+    }
+    public static enum Role {
+        UNKNOWN,
+        CANDIDATE,
+        LEADER,
+        FOLLOWER;
     }
 
     //解法一:暴力递归
