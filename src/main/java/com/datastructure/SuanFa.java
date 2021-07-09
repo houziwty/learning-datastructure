@@ -12,6 +12,12 @@ import java.util.regex.Pattern;
  */
 public class SuanFa {
 
+
+
+
+
+
+
     static Map<String, Integer> all = new HashMap<>();
 
 

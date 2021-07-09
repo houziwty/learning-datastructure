@@ -7,11 +7,16 @@ package com.datastructure;
  */
 public class Fibonacci {
     public static void main(String[] args) {
-        int[] nums={0,1,2,3,4,5,6};
+        int[] nums={1,2,3,4,5,4,6};
 
-        System.out.println(Role.FOLLOWER);
+//        System.out.println(Role.FOLLOWER);
+//
+//        System.out.println(Role.CANDIDATE);
 
-        System.out.println(Role.CANDIDATE);
+        System.out.println(findDuplicate(nums));
+
+
+
 
 //        System.out.println(System.getProperty("os.name"));
 //
@@ -21,6 +26,23 @@ public class Fibonacci {
 //        System.out.println(iterate(10));
 
 
+    }
+
+    static int findDuplicate(int[] nums) {
+        int slow = 0, fast = 0;
+        do {
+
+            slow = nums[slow];
+            System.out.println("fast:"+fast+" nums[fast]:"+nums[fast]);
+            fast = nums[nums[fast]];
+            System.out.println("fast:"+fast);
+        } while (slow != fast);
+        slow = 0;
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+        return slow;
     }
     public static enum Role {
         UNKNOWN,
